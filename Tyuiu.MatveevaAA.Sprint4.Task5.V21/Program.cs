@@ -1,70 +1,40 @@
 ﻿using Tyuiu.MatveevaAA.Sprint4.Task5.V21.Lib;
-
-class Program
+internal class Program
 {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
-        Random rnd = new Random();
         DataService ds = new DataService();
-        Console.Title = "Спринт #4 | Выполнил: Матвеева Анастасия Андреевна | ПКТБ-25-1";
-        Console.WriteLine("************************************************************************");
-        Console.WriteLine("* Спринт #4                                                            *");
-        Console.WriteLine("* Тема:                                                                *");
-        Console.WriteLine("* Задание #5                                                           *");
-        Console.WriteLine("* Вариант #21                                                          *");
-        Console.WriteLine("* Выполнил: Матвеева Анастасия Андреевна  | ПКТБ-25-1                   *");
-        Console.WriteLine("************************************************************************");
-        Console.WriteLine("* УСЛОВИЕ:                                                             *");
-        Console.WriteLine("*                                                                      *");
-        Console.WriteLine("************************************************************************");
-        Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                     *");
-        Console.WriteLine("************************************************************************");
-        int s;
-        int rows;
-        Console.WriteLine("кол строк");
-        rows = Convert.ToInt32(Console.ReadLine());
-        int columns;
-        Console.WriteLine("кол столбцов");
-        columns = Convert.ToInt32(Console.ReadLine());
-
-
-        int[,] matrix = new int[rows, columns];
-        Console.WriteLine("************************************************************************");
-
+        Random rnd = new Random();
+        Console.WriteLine("Input number of rows and colums:");
+        int rows = Convert.ToInt32(Console.ReadLine());
+        int cols = rows;
+        Console.WriteLine("Input array elements:");
+        int[,] array = new int[rows, cols];
         for (int i = 0; i < rows; i++)
         {
-            for (int j = 0; j < columns; j++)
+            for (int j = 0; j < cols; j++)
             {
-                matrix[i, j] = rnd.Next(-8, 2);
-                Console.WriteLine($"Значение\t" + i + " " + j + " " + $"{matrix[i, j]} ");
+                array[i, j] = rnd.Next(-8, 3);
             }
         }
-        Console.WriteLine();
-        Console.WriteLine("************************************************************************");
-        Console.WriteLine("\nМассив:");
+        Console.WriteLine("Array: ");
         for (int i = 0; i < rows; i++)
         {
-            for (int j = 0; j < columns; j++)
+            for (int j = 0; j < cols; j++)
             {
-                Console.Write($"{matrix[i, j]} \t");
-            }
-            Console.WriteLine("\r");
-        }
-        Console.WriteLine();
-        Console.WriteLine("************************************************************************");
-        Console.WriteLine("* РЕЗУЛЬТАТ:                                                           *");
-        Console.WriteLine("************************************************************************");
-
-        int[,] m = ds.Calculate(matrix);
-
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < columns; j++)
-            {
-                Console.Write($"{matrix[i, j]} \t");
+                Console.Write(array[i, j] + " ");
             }
             Console.WriteLine();
         }
-        Console.ReadKey();
+        int[,] result = ds.Calculate(array);
+        Console.WriteLine("Array without positive numbers:");
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                Console.Write(result[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
     }
 }

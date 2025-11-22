@@ -1,26 +1,27 @@
 ﻿using tyuiu.cources.programming.interfaces.Sprint4;
 
-namespace Tyuiu.MatveevaAA.Sprint4.Task5.V21.Lib;
-
-public class DataService : ISprint4Task5V21
+namespace Tyuiu.MatveevaAA.Sprint4.Task5.V21.Lib
 {
-    public int[,] Calculate(int[,] matrix)
+    public class DataService : ISprint4Task5V21
     {
-        int s = 0;
-        int rows = matrix.GetUpperBound(0) + 1;
-        int stolb = matrix.Length / rows;      
-        //int minzn = int.MaxValue;
-
-        for (int i = 0; i < rows; i++)
+        public int[,] Calculate(int[,] matrix)
         {
-            for (int j = 0; j < stolb; j++)
+            int[,] newmat = new int[matrix.GetLength(0), matrix.GetLength(1)];
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                if (matrix[i, j] > 0)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    matrix[i, j] = 1;
+                    if (matrix[i, j] > 0)
+                    {
+                        newmat[i, j] = 1;
+                    }
+                    else
+                    {
+                        newmat[i, j] = matrix[i, j];
+                    }
                 }
             }
+            return newmat;
         }
-        return matrix;
     }
 }

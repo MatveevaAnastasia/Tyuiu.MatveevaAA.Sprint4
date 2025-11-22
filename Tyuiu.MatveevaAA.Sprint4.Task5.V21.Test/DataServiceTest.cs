@@ -1,15 +1,28 @@
 ﻿using Tyuiu.MatveevaAA.Sprint4.Task5.V21.Lib;
 
-[TestClass]
-public class DataServiceTest
+namespace Tyuiu.MatveevaAA.Sprint4.Task5.V21.Test
 {
-    [TestMethod]
-    public void ValidExpression()
+    [TestClass]
+    public sealed class DataServiceTest
     {
-        DataService ds = new DataService();
-        int[] numsArray = { 2, 2, 2, 5, 5, 3, 4, 2, 5, 2, 5, 3, 4, 3, 5, 2 };
-        int res = ds.Calculate(numsArray);
-        int Wait = 84375;
-        Assert.AreEqual(Wait, res);
+        [TestMethod]
+        public void TestMethod1()
+        {
+            DataService ds = new DataService();
+            int[,] matrix = new int[,]
+            {
+                {3, 4, 0},
+                {4, -1, 6},
+                {7, 6, 5}
+            };
+            int[,] wait = new int[,]
+            {
+                {1, 1, 0},
+                {1, -1, 1},
+                {1, 1, 1}
+            };
+            int[,] result = ds.Calculate(matrix);
+            CollectionAssert.AreEqual(wait, result);
+        }
     }
 }
