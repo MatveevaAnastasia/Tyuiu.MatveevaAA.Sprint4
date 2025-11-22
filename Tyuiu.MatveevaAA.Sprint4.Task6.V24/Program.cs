@@ -1,7 +1,7 @@
 ﻿using Tyuiu.MatveevaAA.Sprint4.Task6.V24.Lib;
 
-namespace Tyuiu.MatveevaAA.Sprint4.Task6.V24
-{
+
+
     internal class Program
     {
         static void Main(string[] args)
@@ -41,4 +41,3 @@ namespace Tyuiu.MatveevaAA.Sprint4.Task6.V24
             }
         }
     }
-}
