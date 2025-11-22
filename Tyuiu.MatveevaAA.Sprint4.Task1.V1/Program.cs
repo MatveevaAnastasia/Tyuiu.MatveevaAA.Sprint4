@@ -14,7 +14,7 @@ namespace Tyuiu.MatveevaAA.Sprint4.Task1.V1
         {
             DataService ds = new DataService();
 
-            Console.Title = "Спринт #4 | Выполнила: Варова А. А. | ИИПб-23-2";
+            Console.Title = "Спринт #4 | Выполнила: Матвеева Анастасия Андреевна | ПКТБ-25-1";
 
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #4                                                               *");
