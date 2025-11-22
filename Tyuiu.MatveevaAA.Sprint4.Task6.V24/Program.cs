@@ -1,19 +1,19 @@
 ﻿using Tyuiu.MatveevaAA.Sprint4.Task6.V24.Lib;
 
-
-
+namespace Tyuiu.MatveevaAA.Sprint4.Task6.V24
+{
     internal class Program
     {
         static void Main(string[] args)
         {
             DataService ds = new DataService();
-            Console.Title = "Спринт #4 | Выполнил: Матвеева А А | ПКТБ-25-1";
+            Console.Title = "Спринт #4 | Выполнила:  Матвеева А А | ПКТБ-25-1 ";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #4                                                               *");
             Console.WriteLine("* Тема: Класс Array                                                       *");
             Console.WriteLine("* Задание #6                                                              *");
             Console.WriteLine("* Вариант #24                                                             *");
-            Console.WriteLine("* Выполнил: Матвеева А А | ПКТБ-25-1                           *");
+            Console.WriteLine("* Выполнила: Матвеева А А | ПКТБ-25-1                              *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* УСЛОВИЕ:                                                                *");
             Console.WriteLine("* Дан строковый массив данных [`Компьютер`, `Телефон`, `Планшет`,         *");
@@ -38,6 +38,8 @@
             foreach (string i in res)
             {
                 Console.Write(i + " ");
+                Console.ReadKey();
             }
         }
     }
+}
